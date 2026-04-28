@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:verbose": "next build --verbose",
+    "build:debug": "NODE_OPTIONS='--inspect' next build",
     "start": "next start",
     "lint": "eslint .",
     "amplify-build": "next build",
