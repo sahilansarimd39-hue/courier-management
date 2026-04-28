@@ -3,24 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "=== Starting PreBuild Phase ==="
-        - node --version
-        - npm --version
-        - echo "Installing dependencies with verbose output..."
-        - npm install --verbose
-        - echo "=== PreBuild Phase Completed ==="
+        - npm install
     build:
       commands:
-        - echo "=== Starting Build Phase ==="
-        - echo "Current working directory: $(pwd)"
-        - echo "Listing files in current directory:"
-        - ls -la
-        - echo "Running Next.js build..."
         - npm run build
-        - echo "=== Verifying Build Output ==="
-        - echo "Contents of out directory:"
-        - ls -la out/
-        - echo "=== Build Phase Completed ==="
   artifacts:
     baseDirectory: out
     files:
@@ -28,10 +14,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-  customHeaders:
-    - pattern: '**/*'
-      headers:
-        - key: Cache-Control
-          value: 'no-cache, no-store, must-revalidate'
-        - key: Pragma
-          value: 'no-cache'
