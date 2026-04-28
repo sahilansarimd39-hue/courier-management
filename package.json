@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "amplify-build": "next build"
+    "amplify-build": "next build",
+    "deploy": "npm run build && \"C:\\Program Files\\Git\\bin\\git.exe\" add . && \"C:\\Program Files\\Git\\bin\\git.exe\" commit -m \"Automated deployment\" && \"C:\\Program Files\\Git\\bin\\git.exe\" push origin master",
+    "deploy:amplify": "npm run build && \"C:\\Program Files\\Git\\bin\\git.exe\" add . && \"C:\\Program Files\\Git\\bin\\git.exe\" commit -m \"Automated deployment\" && \"C:\\Program Files\\Git\\bin\\git.exe\" push origin master"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
